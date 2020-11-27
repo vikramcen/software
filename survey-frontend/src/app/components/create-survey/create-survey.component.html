@@ -1,0 +1,104 @@
+<div class="createSurveyWrapper">
+    <div class="createsurverheader">Create Survey</div>
+
+    <mat-radio-group class="radiogrup" aria-label="Select an option" [(ngModel)]="surveyType">
+        <mat-label class="surverytype">Choose any survey Template: </mat-label>
+        <mat-radio-button (change)="radioChange($event)" class="type-button" color="primary" value="mcqs">Multiple Choice</mat-radio-button>
+        <mat-radio-button (change)="radioChange($event)" class="type-button" color="primary" value="shortanswer">Short Answers</mat-radio-button>
+        <mat-radio-button (change)="radioChange($event)" class="type-button" color="primary" value="agreedisagree">Agree/Disagree</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width createsurveytextboxes" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title" [(ngModel)]="title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width createsurveytextboxes" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea class="desc-textarea" matInput placeholder="Description" [(ngModel)]="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width createsurveytimetextboxes" appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput type="datetime-local" placeholder="start date" [(ngModel)]="startDate">
+        <!-- <input matInput placeholder="StartDate" > -->
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width createsurveytimetextboxes rigthtime" appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput type="datetime-local" placeholder="end date" [(ngModel)]="endDate">
+        <!-- <input matInput placeholder="StartDate" > -->
+    </mat-form-field>
+
+    <!-- <mat-form-field>
+        <input matInput type="datetime-local" placeholder="start date">
+    </mat-form-field> -->
+    <!-- <mat-form-field>
+        <input 
+            matInput 
+            [ngxMatDatetimePicker]="picker" 
+            placeholder="Choose a date" 
+            [formControl]="dateControl"
+            [min]="minDate" 
+            [max]="maxDate" 
+            [disabled]="false">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+           [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond">
+        </ngx-mat-datetime-picker>
+     </mat-form-field> -->
+
+    <button *ngIf="surveyType" mat-raised-button color="primary" class="addquestionbutton" (click)="addQuestion()">Add Question</button>
+
+    <div *ngFor="let question of questions,let i = index">
+        <div class="question-header"> Question {{i+1}}: </div>
+
+        <mat-form-field class="example-full-width createsurveytextboxes" appearance="outline">
+            <mat-label>Question</mat-label>
+            <input matInput placeholder="question.title" [(ngModel)]="question.title">
+        </mat-form-field>
+
+        <div *ngIf="surveyType==='mcqs'" class="optionsBox">
+            <button mat-raised-button color="primary" class="addchoicebutton" (click)="addChoice(i)">Add Choice</button>
+            <mat-radio-group aria-label="Select an option" >
+                <app-mc-qs-option *ngFor="let choice of question.options,let i = index" [showCheckBox]='true' [(choices)]="question.options" [index]='i'></app-mc-qs-option>
+            </mat-radio-group>
+        </div>
+    
+        <div *ngIf="surveyType==='shortanswer'" class="optionsBox">
+            <mat-form-field class="example-full-width createsurveytextboxes" appearance="outline">
+                <mat-label>Your Response</mat-label>
+                <input matInput placeholder="Your Response" [(ngModel)]="question.options">
+            </mat-form-field>    
+        </div>
+    
+        <div *ngIf="surveyType==='agreedisagree'" class="optionsBox">
+            <mat-radio-group class="radiogrup" aria-label="Select an option" [(ngModel)]="question.options">
+                <mat-radio-button class="type-button" color="primary" value="true">Agree</mat-radio-button>
+                <mat-radio-button class="type-button" color="primary" value="false">Disagree</mat-radio-button>
+            </mat-radio-group>
+            <!-- <app-mc-qs-option [showCheckBox]='false' [(choices)]="question.options" [index]='i'></app-mc-qs-option> -->
+        </div>
+    </div>
+
+   
+
+
+    <!-- <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label class="surveryLifetime">Lifetime: </mat-label>
+        <mat-date-range-input
+          [formGroup]="campaignOne"
+          [rangePicker]="campaignOnePicker"
+          [comparisonStart]="campaignOne.value.start"
+          [comparisonEnd]="campaignOne.value.end">
+          <input matStartDate placeholder="Start date" formControlName="start">
+          <input matEndDate placeholder="End date" formControlName="end">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+        <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+    </mat-form-field> -->
+
+    <button *ngIf="surveyType" mat-raised-button color="primary" class="saveSurveyButton" (click)="saveSurvey()">Save Record</button>
+
+
+</div>

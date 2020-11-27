@@ -1,0 +1,23 @@
+<!-- <mat-radio-button color="primary" value="false">
+    
+</mat-radio-button> -->
+<div *ngIf="showCheckBox" class="checkbox">
+    <mat-checkbox color="primary" (change)="radioChangeMcqs($event)"  class="example-margin " [checked]="choices[index].answer">
+        <mat-form-field class="mcqsoption" appearance="outline">
+            <mat-label>Option {{index+1}}</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="choices[index].option" (change)="changeOption()">
+        </mat-form-field>
+    </mat-checkbox>
+    
+</div>
+
+<div *ngIf="!showCheckBox" class="checkbox">
+    <mat-checkbox color="primary" (change)="radioChangeMcqs($event)"  class="example-margin " [checked]="choices[index].answer">
+        {{ choices[index].option }} 
+       <!-- <mat-form-field class="mcqsoption" appearance="outline">
+            <mat-label>Option {{index+1}}</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="choices[index].option" (change)="changeOption()">
+        </mat-form-field> -->
+    </mat-checkbox>
+    
+</div>

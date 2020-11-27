@@ -1,0 +1,9 @@
+.mcqsoption{
+    position: relative !important ;
+    width: 330px;
+}
+.checkbox{
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}

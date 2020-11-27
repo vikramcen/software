@@ -1,0 +1,15 @@
+<div class="dashboard-main-wrapper">
+
+    <button 
+        *ngFor="let survey of surveys, let i = index" 
+        mat-raised-button class="dashboard-card"
+        (click)="checkSignInFirst(survey)"
+        >{{survey.title}}</button>
+
+    <!-- <mat-paginator *ngIf="count" class="paginator" 
+            [length]="totalDocCounts"
+            (page)="pageEvent = handlePage($event)"
+            [pageSize]="limit"
+            [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator> -->
+</div>

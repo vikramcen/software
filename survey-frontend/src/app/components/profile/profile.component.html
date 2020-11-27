@@ -1,0 +1,35 @@
+<div  class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <mat-card-header class="mat-card-haeder-1">
+        <mat-card-title class="login-header">My Profile</mat-card-title>
+      </mat-card-header>
+  
+        <mat-card-content>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Username" [(ngModel)]="user.name" type="email">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" [(ngModel)]="user.email" type="email">
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Change Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+
+        </mat-card-content>
+        
+        <button mat-raised-button color="primary" class="btn-block" (click)="updateUser()">Save</button>
+
+      <!-- </form> -->
+    </mat-card>
+</div>

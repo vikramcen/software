@@ -1,0 +1,40 @@
+.survey-main-wrapper{
+
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin-top: 104px;
+    height: fit-content;
+}
+.createsurvey{
+    margin-top: 20px;
+    position: relative;
+    left: 85%;
+    margin-bottom: 20px;
+}
+.dashboard-card{
+    width: 100%;
+    text-align: left;
+    height: 54px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family: cursive;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.paginator{
+    position: relative;
+    width: 100%;    
+    background-color: inherit;
+}
+.record{
+    position: relative;
+    left: 20px;
+}
+.survey-ttitle{
+    position: relative;
+    float: left;
+    width: 88%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

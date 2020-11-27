@@ -1,0 +1,31 @@
+
+<div >
+
+  <mat-toolbar class="toolbar" color="primary">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Survey</span>
+    <span class="example-spacer"></span>
+    
+    <button *ngIf="!userData" mat-raised-button class="loginSignup" (click)="login()">LOGIN</button>
+    <button *ngIf="userData" mat-raised-button class="loginSignup" (click)="logout()">LOGOUT</button>
+
+  </mat-toolbar>
+
+      
+  <mat-drawer-container class="example-container" [hasBackdrop]="false">
+    <mat-drawer class="drawer" #drawer>
+      <div class="drawer-inner-div">
+        <button class="navbar-button" mat-raised-button color="primary" routerLink="Dashboard">Dashboard</button>
+        <button class="navbar-button" mat-raised-button color="primary" (click)="checkSignIn('MySurvey')">My Survey</button>
+        <button class="navbar-button" mat-raised-button color="primary" (click)="checkSignIn('Profile')">Profile</button>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content class="ddrawer-conent">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+</div>

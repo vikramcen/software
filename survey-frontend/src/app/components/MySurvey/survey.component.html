@@ -1,0 +1,17 @@
+<div class="survey-main-wrapper">
+    <button mat-raised-button color="primary" class="createsurvey" (click)="navigateToCreate()">Create Survey</button>
+    <button 
+        *ngFor="let survey of surveys, let i = index" 
+        mat-raised-button class="dashboard-card"
+        >
+        <div class="survey-ttitle">{{survey.title}}</div>
+        <button mat-raised-button color="primary" class="record" (click)="navigateToRecord(survey)">Record</button>
+    </button>
+
+    <!-- <mat-paginator *ngIf="count" class="paginator" 
+            [length]="totalDocCounts"
+            (page)="pageEvent = handlePage($event)"
+            [pageSize]="limit">
+    </mat-paginator> -->
+
+</div>

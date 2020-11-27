@@ -1,0 +1,24 @@
+<div class="record-wrapper">
+    <table  *ngIf="rec && rec.length && surveyType" class="table-record" id="exportContent">
+        <thead>
+            <tr>
+                <th></th>
+                <th class="table-h">Total</th>
+                <th class="table-h">%</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let qnos of questions">
+            <tr class="qno-head">
+                <td colspan="3" class="qno-head-title">{{qnos.title}}</td>
+            </tr>
+            <tr *ngFor="let opts of qnos.options">
+                <td *ngIf="!(surveyType==='shortanswer')" class="normal-body">{{opts.option}}</td>
+                <td *ngIf="!(surveyType==='shortanswer')" class="normal-body">{{opts.count ? opts.count : 0}}</td>
+                <td *ngIf="!(surveyType==='shortanswer')" class="normal-body">{{opts.count ? round((opts.count/rec.length)*100) : 0}}%</td>
+                <td *ngIf="surveyType==='shortanswer'" colspan="3" class="normal-body shortans">{{opts}}</td> 
+            </tr>
+        </tbody>
+    </table>
+    <button class="exportbtn" color="primary" *ngIf="rec && rec.length && surveyType" (click)="export_xlsx('exportContent')" mat-raised-button>Export</button>
+    <div *ngIf="!rec">No Records Found</div>
+</div>

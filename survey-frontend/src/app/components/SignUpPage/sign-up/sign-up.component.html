@@ -1,0 +1,40 @@
+<div  *ngIf="!registered"   class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <mat-card-header class="mat-card-haeder-1">
+        <mat-card-title class="login-header">Sign Up</mat-card-title>
+      </mat-card-header>
+  
+        <mat-card-content>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Username" [(ngModel)]="Username" type="name">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" [(ngModel)]="email" type="email">
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+
+        </mat-card-content>
+        <div class="new-user-note">
+          Already Registered 
+          <span>    <button mat-button color="warn" class="signup-button" (click)="handleLoginClick()">LOGIN HERE</button>          </span>
+        </div>
+
+        <button mat-raised-button color="primary" class="btn-block" (click)="signUp()">Sign Up</button>
+
+      <!-- </form> -->
+    </mat-card>
+</div>
+<!-- <app-login-page *ngIf="registered" ></app-login-page> -->

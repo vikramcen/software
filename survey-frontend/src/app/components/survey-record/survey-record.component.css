@@ -1,0 +1,46 @@
+.record-wrapper{
+    position: relative;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+}
+.table-record{
+    position: relative;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+.table-h{
+    font-size: 20px;
+    font-weight: 400;
+}
+.qno-head{
+    position: relative;
+    font-size: 20px;
+    height: 42px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.normal-body{
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+}
+.qno-head-title{
+    font-weight: 500;
+    left: 10px;
+    font-size: 23px;
+    padding-left: 20px;
+}
+.shortans{
+    text-align: left !important;
+}
+.exportbtn{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+}

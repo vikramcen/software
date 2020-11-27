@@ -1,0 +1,22 @@
+.dashboard-main-wrapper{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin-top: 104px;
+    height: fit-content;
+}
+.paginator{
+    position: relative;
+    width: 100%;    
+    background-color: inherit;
+}
+.dashboard-card{
+    width: 100%;
+    text-align: left;
+    height: 54px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family: cursive;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

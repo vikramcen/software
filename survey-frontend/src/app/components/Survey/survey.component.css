@@ -1,0 +1,59 @@
+.survey-mock-wrapper{
+    position: relative;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+}
+.survey-title{
+    font-size: 18px;
+    font-family: inherit;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    background-color: #dedede;
+    padding: 15px;
+}
+.survey-desc-head{
+    font-size: 18px;
+    font-family: inherit;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.survey-desc{
+    font-size: 14px;
+    font-family: inherit;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #dedede;
+    padding: 15px;
+}
+.saveSurveyButton{
+    position: relative;
+    left: 50%;
+    margin-top: 40px;
+    width: 140px;
+    transform: translateX(-50%);
+    margin-bottom: 80px;
+}
+.question-header{
+    width: fit-content;
+    position: relative;
+    float: left;
+    font-size: 16px;
+}
+
+.question-qno{
+    position: relative;
+    font-size: 16px;
+    left: 10px;
+    margin-top: 20px;
+}
+.agree-button{
+    width: 100%;
+    margin-top: 16px;
+}
+.fillsurveytextbox{
+    width: 85%;
+    margin-top: 20px;
+}

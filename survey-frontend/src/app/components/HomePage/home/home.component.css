@@ -1,0 +1,76 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+.example-container {
+    background-image: url(../../../images/back.jpg);
+    background-size: 100% 108vh;
+    position: absolute !important;
+    width: 100%;
+    top: 0px;
+    overflow-y: hidden;
+    height: 100vh;
+}
+.toolbar{
+    position: absolute;
+    z-index: 100 !important;
+    background: none;
+    color: #6dbad4;
+    -webkit-box-shadow: 2px 24px 140px 7px rgba(222,248,245,1);
+    -moz-box-shadow: 2px 24px 140px 7px rgba(222,248,245,1);
+    box-shadow: 2px 24px 140px 7px rgba(222,248,245,1);
+}
+.drawer{
+    width: 236px;
+    background: #e0e0de;
+}
+.navbar-button{
+    position: relative;
+    width: 90%;
+    border-radius: 20px 200px;
+    margin-bottom: 4px;
+}
+.navbar-button :hover{
+    /* background-color: green !important; */
+}
+.drawer-inner-div{
+    margin-top: 103px;
+    margin-left: 24px; 
+    width: fit-content;
+    height: fit-content;   
+}
+.ddrawer-conent{
+    position: relative;
+    width: 100%;
+    overflow-y: scroll;
+}
+.dialog-width{
+    width: inherit;
+    height: inherit;
+}
+.loginSignup{
+    color: white;
+    background-color: inherit;
+    font-family: monospace;
+    font-size: 17px;
+    font-weight: 500 !important;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: inherit;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #dbf5f2;
+    border-radius: 100%;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #dcf6f3;
+  }
